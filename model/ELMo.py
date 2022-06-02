@@ -196,10 +196,10 @@ class ELMoLstmEncoder(nn.Module):
         stacked_forward_states, stacked_backward_states = [], []
         for layer_index in range(self.num_layers):
             packed_forward_inputs = pack_padded_sequence(
-                forward_inputs, lengths, batch_first=True, enforce_sorted=False
+                forward_inputs, lengths.cpu(), batch_first=True, enforce_sorted=False
             )
             packed_backward_inputs = pack_padded_sequence(
-                backward_inputs, lengths, batch_first=True, enforce_sorted=False
+                backward_inputs, lengths.cpu(), batch_first=True, enforce_sorted=False
             )
 
             forward_layer = self.forward_layers[layer_index]

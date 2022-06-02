@@ -4,7 +4,7 @@ class Config(object):
         self.max_tok_len = 20     #单词最大长度
         self.train_file = './data_processed/product_comment_processed.txt'
         self.dev_file = './data_processed/product_comment_processed_dev.txt'
-        self.char_embedding_dim = 16
+        self.char_embedding_dim = 300
         self.char_conv_filters = [[1,32], [2,32]]
         self.num_highways = 0 #Highway网络层数
         self.projection_dim = 32  #投射维度，从lstmhidden投射
